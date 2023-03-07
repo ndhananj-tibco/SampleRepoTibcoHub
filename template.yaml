@@ -28,7 +28,7 @@ spec:
           title: Description
           type: string
           description: A description for the BWCE Project
-        returnValue:
+        returnprop:
           title: Return Value
           type: string
           description: The value that the BWCE Project should return
