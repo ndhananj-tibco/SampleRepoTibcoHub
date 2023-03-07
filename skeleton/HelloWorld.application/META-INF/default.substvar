@@ -65,7 +65,8 @@
 			<useLookupValue>false</useLookupValue>
 		</globalVariable>
 		<globalVariable>
-			<name>newProperty</name>
+			<name>//HelloWorld//KUB_MOD_PROPERTY</name>
+			<value>${{ values.returnValue }}</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>String</type>

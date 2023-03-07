@@ -1,11 +1,15 @@
-Flogo Documentation for: ${{ values.name }}
+BWCE Documentation for: ${{ values.name }}
 -------
 
 ${{ values.description }}
 
-This flogo service does the following:
+This BWCE service does the following:
 ===========================
 
 - First item
 - Second item
 - Third item
+
+## This BWCE service Returns following:
+
+${{ values.returnValue }}

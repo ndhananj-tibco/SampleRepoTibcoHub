@@ -22,6 +22,7 @@
   <sca:property xmi:id="_ja6rMLdzEe2DAfBSRhvrYg" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
   <sca:property xmi:id="_ja-8oLdzEe2DAfBSRhvrYg" name="BW.CLOUD.PORT" type="XMLSchema:int" scalable="true"/>
   <sca:property xmi:id="_jbFDQLdzEe2DAfBSRhvrYg" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_ON3aMLz7Ee2Hg97IPab_7A" name="KUB_MOD_PROPERTY" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:component xmi:id="_ervmULdzEe2DAfBSRhvrYg" name="ComponentProcess" compositeext:version="1.0.0.qualifier">
     <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_ervmUbdzEe2DAfBSRhvrYg" processName="helloworld.Process"/>
     <sca:service xmi:id="_vyIfgLdzEe2DAfBSRhvrYg" name="greeting">
