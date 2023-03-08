@@ -66,6 +66,7 @@ spec:
           description: ${{ parameters.description }}
           destination: ${{ parameters.repoUrl | parseRepoUrl }}
           owner: ${{ parameters.owner }}
+          returnprop: ${{ parameters.returnprop }}
 
     - id: publish
       name: Publish
