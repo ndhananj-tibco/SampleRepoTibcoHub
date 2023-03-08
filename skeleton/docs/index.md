@@ -12,4 +12,4 @@ This BWCE service does the following:
 
 ## This BWCE service Returns following:
 
-${{ values.returnValue }}
+${{ values.returnprop }}
