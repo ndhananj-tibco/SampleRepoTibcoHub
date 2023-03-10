@@ -2,7 +2,7 @@ apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
   name: bwce-template
-  title: BWCE Template 2
+  title: BWCE Template 3
   description: Create a new BWCE project with Documentation
   tags:
     - recommended
