@@ -98,5 +98,5 @@ spec:
         icon: catalog
         entityRef: ${{ steps.register.output.entityRef }}
       - title: Open Jenkins Job
-        icon: catalog
-        entityRef: ${{ steps.jenkinsEarBuild.output.jobLink }}
+        icon: dashboard
+        url: ${{ steps.jenkinsEarBuild.output.jobLink }}
