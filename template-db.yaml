@@ -1,19 +1,22 @@
 apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
-  name: bwce-template
-  title: BWCE Template
-  description: Create a new BWCE project with Documentation
+  name: bwce-template-db
+  title: BWCE Template (Database) V1
+  description: Create a new BWCE project with Documentation, that exposes a configured database table.
   tags:
     - recommended
     - bwce
     - tibco
+    - postgres
+    - database
+    - table exposure
 spec:
   owner: ACME
   type: service
 
   parameters:
-    - title: Fill in some steps
+    - title: Provide Database Details
       required:
         - name
         - description
@@ -32,6 +35,7 @@ spec:
           title: Return Value
           type: string
           description: The value that the BWCE Project should return
+          default: 'https://www.example.com'
         owner:
           title: Owner
           type: string
@@ -40,6 +44,24 @@ spec:
           ui:options:
             allowedKinds:
               - Group
+        password:
+          title: Password
+          type: string
+          ui:widget: password # will print '******' as value for property 'password' on Review Step
+        masked:
+          title: Masked
+          type: string
+          ui:backstage:
+            review:
+              mask: '<some-value-to-show>' # will print '<some-value-to-show>' as value for property 'Masked' on Review Step
+        hidden:
+          title: Hidden
+          type: string
+          ui:backstage:
+            review:
+              show: false # won't print any info about 'hidden' property on Review Step
+
+
     - title: Choose a location
       required:
         - repoUrl
@@ -60,7 +82,7 @@ spec:
       name: BWCE Skeleton
       action: fetch:template
       input:
-        url: ./skeleton
+        url: ./skeleton-hw
         values:
           name: ${{ parameters.name }}
           description: ${{ parameters.description }}
