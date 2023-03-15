@@ -88,7 +88,7 @@ spec:
       action: tibco:jenkins-trigger-ear-build
       input:
         name: ${{ parameters.name }}
-        repoUrl: ${{ parameters.repoUrl }}
+        job: Build_BWCE_EAR
 
   output:
     links:

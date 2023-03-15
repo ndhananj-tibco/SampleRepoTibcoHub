@@ -24,18 +24,33 @@ spec:
         name:
           title: Name
           type: string
-          description: Unique name of the BWCE Project
+          description: Unique name of the BWCE-Database Project
           ui:field: EntityNamePicker
           ui:autofocus: true
         description:
           title: Description
           type: string
-          description: A description for the BWCE Project
-        returnprop:
-          title: Return Value
+          description: A description for the BWCE-Database Project
+        table_name:
+          title: Table Name
           type: string
-          description: The value that the BWCE Project should return
-          default: 'https://www.example.com'
+          description: The Database table that this BWCE-Project should expose as a service (customers / products)
+          default: 'customers'
+        db_url:
+          title: Database URL
+          type: string
+          description: The Database URL that this BWCE-Project should use to connect to the database
+          default: 'jdbc:tibcosoftwareinc:postgresql://postgres-internal-service.bwce-pg.svc.cluster.local:5432;DatabaseName=mydb'
+        db_user:
+          title: Database User
+          type: string
+          description: The Database user for this BWCE-Project to connect to the database
+          default: 'root'
+        db_pass:
+          title: Database Password
+          type: string
+          default: '#!Ur54lVPPs47bGTRzTDMyOaQhnjYIfbloim4Atg6HV08='
+          ui:widget: password # will print '******' as value for property 'password' on Review Step
         owner:
           title: Owner
           type: string
@@ -44,23 +59,6 @@ spec:
           ui:options:
             allowedKinds:
               - Group
-        password:
-          title: Password
-          type: string
-          ui:widget: password # will print '******' as value for property 'password' on Review Step
-        masked:
-          title: Masked
-          type: string
-          ui:backstage:
-            review:
-              mask: '<some-value-to-show>' # will print '<some-value-to-show>' as value for property 'Masked' on Review Step
-        hidden:
-          title: Hidden
-          type: string
-          ui:backstage:
-            review:
-              show: false # won't print any info about 'hidden' property on Review Step
-
 
     - title: Choose a location
       required:
@@ -82,13 +80,16 @@ spec:
       name: BWCE Skeleton
       action: fetch:template
       input:
-        url: ./skeleton-hw
+        url: ./skeleton-db
         values:
           name: ${{ parameters.name }}
           description: ${{ parameters.description }}
           destination: ${{ parameters.repoUrl | parseRepoUrl }}
           owner: ${{ parameters.owner }}
-          returnprop: ${{ parameters.returnprop }}
+          table_name: ${{ parameters.table_name }}
+          db_url: ${{ parameters.table_name }}
+          db_user: ${{ parameters.db_user }}
+          db_pass: ${{ parameters.db_pass }}
 
     - id: publish
       name: Publish
@@ -110,7 +111,7 @@ spec:
       action: tibco:jenkins-trigger-ear-build
       input:
         name: ${{ parameters.name }}
-        repoUrl: ${{ parameters.repoUrl }}
+        job: Build_BWCE_EAR_DB
 
   output:
     links:
