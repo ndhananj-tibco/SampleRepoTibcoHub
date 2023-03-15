@@ -87,7 +87,7 @@ spec:
           destination: ${{ parameters.repoUrl | parseRepoUrl }}
           owner: ${{ parameters.owner }}
           table_name: ${{ parameters.table_name }}
-          db_url: ${{ parameters.table_name }}
+          db_url: ${{ parameters.db_url }}
           db_user: ${{ parameters.db_user }}
           db_pass: ${{ parameters.db_pass }}
 
