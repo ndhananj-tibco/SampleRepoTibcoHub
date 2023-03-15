@@ -10,6 +10,8 @@ This BWCE service does the following:
 - Second item
 - Third item
 
-## This BWCE service Returns following:
+## This BWCE service expose the following database table: ${{ values.table_name }}
 
-${{ values.returnprop }}
+- db_url: **${{ values.table_name }}**
+- db_user: **${{ values.db_user }}** 
+
