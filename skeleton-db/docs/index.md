@@ -12,6 +12,6 @@ This BWCE service does the following:
 
 ## This BWCE service expose the following database table: ${{ values.table_name }}
 
-- db_url: **${{ values.table_name }}**
-- db_user: **${{ values.db_user }}** 
+- Database URL: **${{ values.db_url }}**
+- Database User: **${{ values.db_user }}** 
 
