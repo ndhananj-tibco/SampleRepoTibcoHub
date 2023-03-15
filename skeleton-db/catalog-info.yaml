@@ -18,4 +18,5 @@ metadata:
 spec:
   type: service
   lifecycle: development
+  system: data-table-exposure
   owner: ${{values.owner | dump}}
