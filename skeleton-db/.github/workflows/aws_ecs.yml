@@ -106,17 +106,17 @@ jobs:
     #     args: rollout status deployment/$ECR_REPOSITORY
 
       # --- #
-    - name: Build and push ECR CONTAINER
-      id: kubectl
-      uses: ianbelcher/eks-kubectl-action@master
-      with:
-        cluster_name: tibco-hub-cluster-eu
-        eks_role_arn: arn:aws:iam::471860524421:role/gh-actions-role
-        args: set image --record deployment/pod-name pod-name=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
-      # --- #
-
-    - name: Use the output
-      run: echo ${{ '${{ steps.kubectl.outputs.kubectl-out }}' }}
+#    - name: Build and push ECR CONTAINER
+#      id: kubectl
+#      uses: ianbelcher/eks-kubectl-action@master
+#      with:
+#        cluster_name: tibco-hub-cluster-eu
+#        eks_role_arn: arn:aws:iam::471860524421:role/gh-actions-role
+#        args: set image --record deployment/pod-name pod-name=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+#      # --- #
+#
+#    - name: Use the output
+#      run: echo ${{ '${{ steps.kubectl.outputs.kubectl-out }}' }}
 
     - name: Run kubectl
       uses: nikosch86/github-action-eks-kubectl@main
