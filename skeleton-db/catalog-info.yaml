@@ -20,3 +20,12 @@ spec:
   lifecycle: development
   system: data-table-exposure
   owner: ${{values.owner | dump}}
+  providesApis: [ "${{values.name}}-api" ]
+---
+apiVersion: backstage.io/v1alpha1
+kind: Location
+metadata:
+  name: ${{values.name}}-api-location
+spec:
+  targets:
+    - ./catalog-api.yaml
