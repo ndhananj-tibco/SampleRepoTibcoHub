@@ -34,7 +34,7 @@ on:
 
 env:
   AWS_REGION: eu-west-1                   # set this to your preferred AWS region, e.g. us-west-1
-  ECR_REPOSITORY: hw-aws-container           # set this to your Amazon ECR repository name
+  ECR_REPOSITORY: bwce-db-container           # set this to your Amazon ECR repository name
   # ECS_SERVICE: MY_ECS_SERVICE                 # set this to your Amazon ECS service name
   # ECS_CLUSTER: MY_ECS_CLUSTER                 # set this to your Amazon ECS cluster name
   # ECS_TASK_DEFINITION: MY_ECS_TASK_DEFINITION # set this to the path to your Amazon ECS task definition
@@ -66,7 +66,7 @@ jobs:
         # aws-region:   
         # aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         # aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        aws-region: ${{ env.AWS_REGION }}
+        aws-region: eu-west-1
 
     - name: Login to Amazon ECR
       id: login-ecr
@@ -75,8 +75,8 @@ jobs:
     - name: Build, tag, and push image to Amazon ECR
       id: build-image
       env:
-        ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-        IMAGE_TAG: ${{ github.sha }}
+        ECR_REGISTRY: 471860524421.dkr.ecr.eu-west-1.amazonaws.com
+        IMAGE_TAG: v1
       run: |
         # Build a docker container and
         # push it to ECR so that it can
@@ -112,7 +112,7 @@ jobs:
       # --- #
 
     - name: Use the output
-      run: echo "${{ steps.kubectl.outputs.kubectl-out }}"
+      run: echo {{"${{ steps.kubectl.outputs.kubectl-out }}"}}
 
     # - name: Fill in the new image ID in the Amazon ECS task definition
     #   id: task-def
