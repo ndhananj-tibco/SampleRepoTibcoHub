@@ -85,7 +85,8 @@ jobs:
         docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
         echo "image=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG" >> $GITHUB_OUTPUT
-        kubectl get all -A
+
+    # kubectl get all -A
 
     # - name: deploy to cluster
     #   uses: kodermax/kubectl-aws-eks@master
@@ -104,7 +105,7 @@ jobs:
     #     args: rollout status deployment/$ECR_REPOSITORY
 
       # --- #
-    - name: Build and push CONTAINER_NAME
+    - name: Build and push CONTAINER For ${{ values.name }}
       id: kubectl
       uses: ianbelcher/eks-kubectl-action@master
       with:
@@ -116,6 +117,12 @@ jobs:
     - name: Use the output
       run: echo ${{ '${{ steps.kubectl.outputs.kubectl-out }}' }}
 
+    - name: Run kubectl
+      uses: nikosch86/github-action-eks-kubectl@main
+      with:
+        command: "get all -A"
+      env:
+        EKS_CLUSTER: tibco-hub-cluster-eu
     # - name: Fill in the new image ID in the Amazon ECS task definition
     #   id: task-def
     #   uses: aws-actions/amazon-ecs-render-task-definition@v1
