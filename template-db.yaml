@@ -2,7 +2,7 @@ apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
   name: bwce-template-db
-  title: BWCE Template (Database)
+  title: BWCE Template (Database) V2
   description: Create a new BWCE project with Documentation, that exposes a configured database table.
   tags:
     - recommended
@@ -22,7 +22,7 @@ spec:
         - description
       properties:
         name:
-          title: Name
+          title: Name of YOUR APP
           type: string
           description: Unique name of the BWCE-Database Project
           ui:field: EntityNamePicker
