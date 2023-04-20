@@ -2,7 +2,7 @@ apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
   name: bwce-template-psg
-  title: BWCE Template (PGS Framework)
+  title: BWCE (PSG Framework)
   description: Create a new BWCE project with Documentation, based on the PSG Framework
   tags:
     - recommended
