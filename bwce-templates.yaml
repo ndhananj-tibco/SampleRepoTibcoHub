@@ -1,0 +1,9 @@
+apiVersion: backstage.io/v1alpha1
+kind: Location
+metadata:
+  name: bwce-templates-locations
+spec:
+  targets:
+    - ./template-db.yaml
+    - ./template-hw.yaml
+    - ./template-psg-synch.yaml
