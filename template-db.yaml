@@ -5,12 +5,12 @@ metadata:
   title: BWCE Template (Database) V2
   description: Create a new BWCE project with Documentation, that exposes a configured database table.
   tags:
-    - recommended
-    - bwce
     - tibco
+    - bwce
     - postgres
     - database
     - table
+    - recommended
 spec:
   owner: ACME
   type: service

@@ -5,12 +5,12 @@ metadata:
   title: BWCE (PSG Framework)
   description: Create a new BWCE project with Documentation, based on the PSG Framework
   tags:
-    - recommended
-    - bwce
     - tibco
+    - bwce
     - postgres
     - database
     - table
+    - recommended
 spec:
   owner: ACME
   type: service
