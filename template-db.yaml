@@ -2,7 +2,7 @@ apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
   name: bwce-template-db
-  title: BWCE Template (Database) V2
+  title: BWCE Template (Database) V3
   description: Create a new BWCE project with Documentation, that exposes a configured database table.
   tags:
     - tibco
