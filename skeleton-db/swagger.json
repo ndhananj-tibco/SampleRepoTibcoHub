@@ -4,7 +4,7 @@
     "version" : "1.0",
     "title" : "PGDatabaseManager.application"
   },
-  "host" : "localhost:30081",
+  "host" : "k8s-bwcename-bwceingr-98eb831145-249879362.eu-west-1.elb.amazonaws.com",
   "schemes" : [ "http" ],
   "consumes" : [ "application/json" ],
   "produces" : [ "application/json" ],
