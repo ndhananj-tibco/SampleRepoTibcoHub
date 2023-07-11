@@ -7,3 +7,4 @@ spec:
     - ./template-db.yaml
     - ./template-hw.yaml
     - ./template-psg-synch.yaml
+    - ./template-otk.yaml
