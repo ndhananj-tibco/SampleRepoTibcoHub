@@ -832,7 +832,7 @@
                                     </children>
 
                                     <children
-                                    description="Order Service that receives the Order on Rest Channel and Orchestrate the different Audit events and sent the Order to ${{ values.description }} through Kafka Broker"
+                                    description="Order Service that receives the Order on Rest Channel and Orchestrate the different Audit events and sent the Order to ${{ values.system }} through Kafka Broker"
                                     fillColor="13369343"
                                     fontName=".AppleSystemUIFont"
                                     lineColor="6737151"

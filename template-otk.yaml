@@ -28,6 +28,14 @@ spec:
           title: Description
           type: string
           description: A description for the BWCE Project
+        system:
+          title: System
+          type: string
+          description: Target System to Send Order To
+          ui:field: EntityPicker
+          ui:options:
+            catalogFilter:
+              kind: System
         owner:
           title: Owner
           type: string
@@ -62,6 +70,7 @@ spec:
           description: ${{ parameters.description }}
           destination: ${{ parameters.repoUrl | parseRepoUrl }}
           owner: ${{ parameters.owner }}
+          system: ${{ parameters.system }}
 
     - id: publish
       name: Publish
