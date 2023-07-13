@@ -35,7 +35,7 @@ spec:
           ui:field: EntityPicker
           ui:options:
             catalogFilter:
-              kind: Api
+              kind: System
         owner:
           title: Owner
           type: string
