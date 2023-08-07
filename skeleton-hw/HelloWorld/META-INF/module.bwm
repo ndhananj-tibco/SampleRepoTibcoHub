@@ -29,4 +29,7 @@
       <sca:interface.wsdl xmi:id="_vyIfgbdzEe2DAfBSRhvrYg" interface="http://xmlns.example.com/20230228152332PLT#wsdl.interface(greeting)"/>
     </sca:service>
   </sca:component>
+  <sca:component xmi:id="_SNlJ4DUREe6KY7ThZL1DCQ" name="ComponentProcess1" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_SNlJ4TUREe6KY7ThZL1DCQ" processName="helloworld.Process1"/>
+  </sca:component>
 </sca:composite>
